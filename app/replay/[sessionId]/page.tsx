@@ -45,10 +45,10 @@ export default async function ReplayPage({ params }: { params: Promise<{ session
   const finalSnapshots = dbSnapshots.length > 0 ? dbSnapshots : eventSnapshots;
 
   return (
-    <div className="min-h-screen bg-[#0b0e14] text-zinc-50 font-sans flex flex-col selection:bg-cyan-500/30 animate-in fade-in duration-500 overflow-hidden">
+    <div className="min-h-screen bg-zinc-950 text-zinc-50 font-sans flex flex-col selection:bg-orange-500/30 animate-in fade-in duration-500 overflow-hidden">
       
       {/* Top Navbar */}
-      <header className="h-16 border-b border-zinc-800/60 bg-[#0b0e14] flex items-center justify-between px-6 shrink-0 z-10">
+      <header className="h-16 border-b border-zinc-800/60 bg-zinc-950 flex items-center justify-between px-6 shrink-0 z-10">
         <div className="flex items-center gap-4">
           <Link 
             href={`/dashboard/sessions/${session.sessionId}`}
@@ -62,8 +62,8 @@ export default async function ReplayPage({ params }: { params: Promise<{ session
               <p className="text-[11px] text-zinc-500">{session.playerName} · {session.sessionId}</p>
             </div>
           </div>
-          <div className="px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 ml-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+          <div className="px-2 py-0.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-500 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 ml-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
             SDK Connected
           </div>
         </div>
@@ -74,14 +74,14 @@ export default async function ReplayPage({ params }: { params: Promise<{ session
             <input 
               type="text" 
               placeholder="Search sessions..." 
-              className="bg-[#131821] border border-zinc-800/60 rounded-lg pl-9 pr-4 py-1.5 text-xs w-48 outline-none focus:border-cyan-500/50 text-zinc-200 transition-colors"
+              className="bg-zinc-900 border border-zinc-800/60 rounded-lg pl-9 pr-4 py-1.5 text-xs w-48 outline-none focus:border-sky-400/50 text-zinc-200 transition-colors"
             />
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 p-5 flex gap-5 overflow-hidden bg-[#131821]">
+      <main className="flex-1 p-5 flex gap-5 overflow-hidden bg-zinc-950">
         
         {/* Left Column: Replay Area & Timeline */}
         <div className="flex-1 flex flex-col gap-5 overflow-hidden">
@@ -91,10 +91,10 @@ export default async function ReplayPage({ params }: { params: Promise<{ session
               <ArrowLeft className="w-4 h-4" /> Session Details
             </button>
             <div className="flex gap-2">
-              <div className="px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-500 text-xs font-bold flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-rose-500"></div> Player Dead
+              <div className="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-bold flex items-center gap-1.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div> Player Dead
               </div>
-              <Link href={`/dashboard/ai/${session.sessionId}`} className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold flex items-center gap-1.5 hover:bg-cyan-500/20 transition-colors">
+              <Link href={`/dashboard/ai/${session.sessionId}`} className="px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-500 text-xs font-bold flex items-center gap-1.5 hover:bg-orange-500/20 transition-colors">
                 <Sparkles className="w-3.5 h-3.5" /> AI Report
               </Link>
             </div>
@@ -102,12 +102,12 @@ export default async function ReplayPage({ params }: { params: Promise<{ session
 
           <div className="shrink-0 h-[650px]">
             {/* Unified 3D & Snapshot Viewer */}
-            <div className="border border-zinc-800/60 rounded-2xl flex flex-col shadow-sm h-full bg-[#0b0e14]">
+            <div className="border border-zinc-800/60 rounded-2xl flex flex-col shadow-sm h-full bg-zinc-900">
               <ReplayViewer session={session} events={mappedEvents} snapshots={finalSnapshots as any} />
             </div>
           </div>
 
-          <div className="flex-1 min-h-0 border border-zinc-800/60 rounded-2xl flex flex-col shadow-sm bg-[#0b0e14]">
+          <div className="flex-1 min-h-0 border border-zinc-800/60 rounded-2xl flex flex-col shadow-sm bg-zinc-900">
             <div className="px-4 py-3 border-b border-zinc-800/60">
               <h2 className="text-sm font-bold text-white">Event Timeline</h2>
             </div>
@@ -119,7 +119,7 @@ export default async function ReplayPage({ params }: { params: Promise<{ session
 
         {/* Right Sidebar: Details & Instructions */}
         <div className="w-[300px] shrink-0 flex flex-col gap-4">
-          <div className="bg-[#0b0e14] border border-zinc-800/60 rounded-2xl p-5 shadow-sm">
+          <div className="bg-zinc-900 border border-zinc-800/60 rounded-2xl p-5 shadow-sm">
             <div className="space-y-4">
               <div className="flex justify-between items-center text-sm">
                 <span className="text-zinc-500 font-medium">Player</span>
@@ -159,7 +159,7 @@ export default async function ReplayPage({ params }: { params: Promise<{ session
             
           </div>
 
-          <div className="bg-[#0b0e14] border border-zinc-800/60 rounded-2xl p-5 shadow-sm border-t-cyan-500/30">
+          <div className="bg-zinc-900 border border-zinc-800/60 rounded-2xl p-5 shadow-sm border-t-orange-500/30">
             <h3 className="text-sm font-bold text-white mb-2">How to read the map</h3>
             <p className="text-xs text-zinc-400 leading-relaxed">
               The 3D volumetric viewport is reconstructed dynamically. Use the controls below it to navigate the timeline. The snapshot frame player on the right synchronizes with the game's actual screen recordings.

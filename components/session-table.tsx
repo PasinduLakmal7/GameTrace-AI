@@ -21,18 +21,22 @@ export function SessionTable({ sessions }: { sessions: UnitySession[] }) {
         <tbody className="divide-y divide-zinc-800/30">
           {sessions.map((session) => (
             <tr key={session.sessionId} className="hover:bg-zinc-800/20 transition-colors group">
-              <td className="px-4 py-4 font-mono text-cyan-400 text-xs">
-                <Link href={`/replay/${session.sessionId}`} className="hover:underline">
+              <td className="px-4 py-4 font-mono text-sky-400 text-xs">
+                <Link href={`/dashboard/sessions/${session.sessionId}`} className="hover:underline">
                   {session.sessionId}
                 </Link>
               </td>
-              <td className="px-4 py-4 font-medium text-zinc-200">{session.playerName}</td>
+              <td className="px-4 py-4 font-medium text-zinc-200">
+                <Link href={`/dashboard/sessions/${session.sessionId}`} className="hover:text-white hover:underline transition-colors">
+                  {session.playerName}
+                </Link>
+              </td>
               <td className="px-4 py-4">
                 <span className={cn(
                   "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border",
-                  session.status === "Completed" ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" : 
-                  session.status === "Player Dead" ? "bg-rose-500/10 text-rose-400 border-rose-500/20" : 
-                  "bg-amber-500/10 text-amber-400 border-amber-500/20" // Crashed
+                  session.status === "Completed" ? "bg-green-500/10 text-green-500 border-green-500/20" : 
+                  session.status === "Player Dead" ? "bg-red-500/10 text-red-500 border-red-500/20" : 
+                  "bg-orange-500/10 text-orange-500 border-orange-500/20" // Crashed
                 )}>
                   {session.status === "Completed" && <CheckCircle2 className="w-3 h-3" />}
                   {session.status === "Player Dead" && <Skull className="w-3 h-3" />}

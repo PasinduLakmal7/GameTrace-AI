@@ -17,8 +17,8 @@ export function LiveSidebarStats({ events }: { events: UnityEvent[] }) {
 
   return (
     <div className="mt-6 pt-4 border-t border-zinc-800/60 space-y-4">
-      <div className="text-[10px] font-bold text-cyan-500 uppercase tracking-widest flex items-center gap-2 mb-2">
-        <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.8)]"></div>
+      <div className="text-[10px] font-bold text-sky-400 uppercase tracking-widest flex items-center gap-2 mb-2">
+        <div className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse shadow-[0_0_8px_rgba(56,189,248,0.8)]"></div>
         Live Playback Stats
       </div>
       <div className="flex justify-between items-center text-sm">

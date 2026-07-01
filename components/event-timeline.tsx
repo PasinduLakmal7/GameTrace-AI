@@ -4,21 +4,21 @@ import { Search, ChevronDown } from "lucide-react";
 
 export function EventTimeline({ events }: { events: UnityEvent[] }) {
   if (!events || events.length === 0) {
-    return <div className="p-8 text-center text-zinc-500 bg-[#0b0e14] rounded-2xl border border-zinc-800/60">No events found for this session.</div>;
+    return <div className="p-8 text-center text-zinc-500 bg-zinc-900 rounded-2xl border border-zinc-800/60">No events found for this session.</div>;
   }
 
   return (
-    <div className="flex flex-col h-full bg-[#0b0e14]">
-      <div className="p-3 border-b border-zinc-800/60 flex items-center gap-2 bg-[#0b0e14]">
+    <div className="flex flex-col h-full bg-zinc-900">
+      <div className="p-3 border-b border-zinc-800/60 flex items-center gap-2 bg-zinc-900">
         <div className="relative flex-1">
           <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
           <input 
             type="text" 
             placeholder="Search event value..."
-            className="w-full bg-[#131821] border border-zinc-800/60 rounded-lg pl-8 pr-4 py-1.5 text-xs text-zinc-200 outline-none focus:border-cyan-500/50 transition-colors"
+            className="w-full bg-zinc-800 border border-zinc-800/60 rounded-lg pl-8 pr-4 py-1.5 text-xs text-zinc-200 outline-none focus:border-orange-500/50 transition-colors"
           />
         </div>
-        <button className="px-3 py-1.5 bg-[#131821] border border-zinc-800/60 rounded-lg text-xs text-zinc-300 flex items-center gap-2 hover:bg-zinc-800/50 transition-colors">
+        <button className="px-3 py-1.5 bg-zinc-800 border border-zinc-800/60 rounded-lg text-xs text-zinc-300 flex items-center gap-2 hover:bg-zinc-800/50 transition-colors">
           ALL <ChevronDown className="w-3 h-3 text-zinc-500" />
         </button>
       </div>

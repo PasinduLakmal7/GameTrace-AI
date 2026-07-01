@@ -13,7 +13,7 @@ export function EventBadge({ type, className, showIcon = true }: EventBadgeProps
 
   switch (type) {
     case "SESSION_START":
-      badgeColor = "bg-cyan-500/10 text-cyan-400 border-cyan-500/20";
+      badgeColor = "bg-orange-500/10 text-orange-500 border-orange-500/20";
       Icon = Flag;
       break;
     case "POSITION":
@@ -21,29 +21,29 @@ export function EventBadge({ type, className, showIcon = true }: EventBadgeProps
       Icon = Activity;
       break;
     case "PLAYER_HIT":
-      badgeColor = "bg-amber-500/10 text-amber-400 border-amber-500/20";
+      badgeColor = "bg-orange-500/10 text-orange-500 border-orange-500/20";
       Icon = HeartPulse;
       break;
     case "PLAYER_SHOOT":
-      badgeColor = "bg-indigo-500/10 text-indigo-400 border-indigo-500/20";
+      badgeColor = "bg-sky-500/10 text-sky-400 border-sky-500/20";
       Icon = Crosshair;
       break;
     case "ENEMY_HIT":
-      badgeColor = "bg-rose-500/10 text-rose-400 border-rose-500/20";
+      badgeColor = "bg-red-500/10 text-red-500 border-red-500/20";
       Icon = Target;
       break;
     case "ENEMY_DIE":
-      badgeColor = "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
+      badgeColor = "bg-green-500/10 text-green-500 border-green-500/20";
       Icon = Skull;
       break;
     case "SCORE_CHANGE":
-      badgeColor = "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
+      badgeColor = "bg-green-500/10 text-green-500 border-green-500/20";
       Icon = Trophy;
       break;
     case "PLAYER_DIE":
     case "PLAYER_DEAD":
     case "GAME_OVER":
-      badgeColor = "bg-rose-500/10 text-rose-400 border-rose-500/20";
+      badgeColor = "bg-red-500/10 text-red-500 border-red-500/20";
       Icon = ShieldAlert;
       break;
   }
